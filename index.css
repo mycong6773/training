@@ -2,7 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
+
 .container{
     margin-left: auto;
     margin-right:auto;
@@ -19,7 +21,7 @@
     width: 100%;
     
 }
-.item_1{
+.item{
     width: 100%;
     border: 1px solid #d5d6df;
     position: relative;
@@ -28,7 +30,7 @@
 .content_item1{
     position: relative;
 }
-.item_1 img{
+.item img{
     width: 100%;
     z-index: -1;
 }
@@ -64,7 +66,7 @@ font-size: 12px;
     line-height: 4.167;
 }
   
-.boder{
+.price{
     position: absolute;
     text-align: center; 
     border: 1px solid #d5d6df ;
@@ -78,22 +80,22 @@ font-size: 12px;
     transform: translate(-50%,-50%);
    
 }
-.money{
+.price-title{
     font-size: 32px;
     font-family: "Source Sans Pro";
     color: rgb( 33, 150, 247 );
 }
-.name_1{
+.price-text{
     font-size: 16px;
     font-family: "Source Sans Pro";
     color: rgb( 153, 169, 181 );
 }
-.content{
+.sub{
     background-color: white;
     text-align: center;
     margin-top: 20px;
 }
-.content .content_1{
+.sub .content_1{
     font-size: 16px;
     color:  rgb( 95, 114, 127 );
     font-family: "Source Sans Pro";
@@ -102,21 +104,21 @@ font-size: 12px;
     
     background-color: rgb( 244, 246, 247 );
 }
-.content .content_2 {
+.sub .content_2 {
     font-size: 16px;
     color:  rgb( 95, 114, 127 );
     font-family: "Source Sans Pro";
     line-height: 3.125;
     text-align: center;
   }
-  .title{
+  .sub-title{
     font-size: 24px;
     font-family: "Source Sans Pro";
     color: rgb( 95, 114, 127 );
     line-height: 1.542;
     
   }
-  .content_title {
+  .sub-content {
         font-size: 14px;
         font-family: "Source Sans Pro";
         color: rgb( 153, 169, 181 );
@@ -150,13 +152,13 @@ font-size: 12px;
     top: 50%;
     transform: translate(-50%,-50%);
   }
-  .money2 {
+  .price-title2 {
     font-size: 32px;
     font-family: "Source Sans Pro";
     color: rgb( 215, 68, 152 );
   }
  
-  .boder2{
+  .price2{
     position: absolute;
     text-align: center; 
     border: 1px solid #d5d6df ;
@@ -171,41 +173,7 @@ font-size: 12px;
    
 }
 
-/* @media (max-width: 768px) {
-    .container{
-        min-width: 640px;
-    }
-    .main{
-        grid-template-columns: 1fr ;
-    }
-}
 
-@media (max-width: 1024px) {
-    .container{
-        min-width: 980px;
-    }
-    .main{
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
-
-@media (min-width: 1280px) {
-    .container{
-        max-width: 1100px;
-    }
-    .main{
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
-
-@media (max-width: 1536px) {
-    .container{
-        min-width: 1280px;
-    }
-    .main{
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-} */
 
 @media (min-width: 768px) {
     .container {
