@@ -95,7 +95,7 @@ background-color: white;
 text-align: center;
 margin-top: 20px;
 }
-.sub .content_1{
+.sub .content{
 font-size: 16px;
 color: rgb( 95, 114, 127 );
 font-family: "Source Sans Pro";
@@ -103,19 +103,13 @@ line-height: 3;
 text-align: center;
 background-color: rgb( 244, 246, 247 );
 }
-.content_1 ul{
+.content ul{
   list-style: none;
 }
 .li_2{
   background-color: white;
 }
-.sub .content_2 {
-font-size: 16px;
-color: rgb( 95, 114, 127 );
-font-family: "Source Sans Pro";
-line-height: 3;
-text-align: center;
-}
+
 .sub-title{
 font-size: 24px;
 font-family: "Source Sans Pro";
