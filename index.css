@@ -13,22 +13,42 @@ padding-right: 15px;
 padding-left: 15px;
 
 }
-.main{
+/* .main{
 margin-top: 100px;
 display: grid;
 grid-template-columns: 1fr ;
 grid-gap: 40px;
 width: 100%;
 
+} */
+.main{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 100px;
+
 }
-.item{
+/* .item{
 width: 100%;
 border: 1px solid #d5d6df;
 position: relative;
 margin-bottom: 100px;
+} */
+.item{
+  width: 100%;
+  max-width: 340px;
+  padding:0px 30px;
+  position: relative;
+  margin-bottom: 100px;
+  
 }
 .content_item1{
 position: relative;
+}
+.content_item1 p{
+  font-size: 32px;
+  font-family: "Montserrat";
+  color: rgb( 255, 255, 255 );
 }
 .item img{
 width: 100%;
@@ -55,11 +75,10 @@ transform: translate(-20%,-20%);
 }
 .new p{
 position: absolute;
-text-align: center;
 z-index: 2;
 top: 0;
 left: 0;
-transform: translate(30%,-18%);
+transform: translate(150%,-10%);
 font-size: 12px;
 font-family: "Myriad Pro";
 color: rgb( 255, 255, 255 );
@@ -125,16 +144,17 @@ line-height: 2;
 margin-bottom: 25px;
 }
 .button {
-margin: 50px 100px;
+margin-top: 50px;
 border-color: rgb(123, 99, 255);
 }
-.button p{
-border: 1px solid;
+.button button{
+border: 1px solid rgb( 108, 19, 111 ) ;
 font-size: 19px;
 font-family: "Montserrat";
-color: rgb( 108, 19, 111 );
-text-transform: uppercase;
-padding:15px 20px  ;
+
+
+padding:10px 20px;
+  color: rgb( 108, 19, 111 );
 }
 .button :hover{
 color: white;
@@ -172,7 +192,7 @@ transform: translate(-50%,-50%);
 
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
 .container {
 max-width: 640px;
 padding-right: 0px;
@@ -217,4 +237,4 @@ grid-template-columns: 1fr 1fr 1fr;
 
 
 }
-}
+} */
