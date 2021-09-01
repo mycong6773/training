@@ -67,6 +67,9 @@ padding:0px 30px;
 position: relative;
 margin-bottom: 100px;
 }
+.bg-white{
+  background-color: white;
+}
 
 .content_item p{
 color: rgb( 255, 255, 255 );
@@ -127,9 +130,7 @@ background-color: rgb( 244, 246, 247 );
 .content ul{
 list-style: none;
 }
-.li_2{
-background-color: white;
-}
+
 
 .sub-title{
 color: rgb( 95, 114, 127 );
