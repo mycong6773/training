@@ -2,64 +2,82 @@
 margin: 0;
 padding: 0;
 box-sizing: border-box;
-font-family: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'HelveticaNeue', sans-serif"
 }
-
 .container{
 margin-left: auto;
 margin-right:auto;
 width: 100%;
 padding-right: 15px;
 padding-left: 15px;
-
 }
-/* .main{
-margin-top: 100px;
-display: grid;
-grid-template-columns: 1fr ;
-grid-gap: 40px;
-width: 100%;
 
-} */
 .main{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 100px;
-
+flex-wrap: wrap;
+margin-top: 100px;
 }
-/* .item{
+
+.font-sourceSansPro{
+font-family: "Source Sans Pro";
+}
+.font-montserrat{
+font-family: "Montserrat";
+}
+.font-myriadPro{
+font-family: "Myriad Pro";
+}
+.text-center{
+text-align: center;
+}
+
+.text-12px{
+font-size: 12px;
+}
+.text-32px{
+font-size: 32px;
+}
+.text-36px{
+font-size: 36px;
+}
+.text-19px{
+font-size: 19px;
+}
+.text-16px{
+font-size: 16px;
+}
+.text-24px{
+font-size: 24px;
+}
+.justify-center{
+justify-content: center;
+}
+.flex{
+display: flex;
+}
+.relative{
+position: relative;
+}
+.absolute{
+position: absolute;
+}
+
+.item{
 width: 100%;
-border: 1px solid #d5d6df;
+max-width: 340px;
+padding:0px 30px;
 position: relative;
 margin-bottom: 100px;
-} */
-.item{
-  width: 100%;
-  max-width: 340px;
-  padding:0px 30px;
-  position: relative;
-  margin-bottom: 100px;
-  
 }
-.content_item1{
-position: relative;
-}
-.content_item1 p{
-  font-size: 32px;
-  font-family: "Montserrat";
-  color: rgb( 255, 255, 255 );
+
+.content_item p{
+color: rgb( 255, 255, 255 );
 }
 .item img{
 width: 100%;
 z-index: -1;
 }
 .title_img{
-position: absolute;
 color: white;
-text-align: center;
 font-size: 36px;
-font-family: "Myriad Pro";
 line-height: 1;
 left: 50%;
 top: 50%;
@@ -67,119 +85,89 @@ transform: translate(-50%,-50%);
 }
 .new img{
 width: 65px;
-position: absolute;
 z-index: 1;
 top: 0;
 transform: translate(-20%,-20%);
-
 }
 .new p{
-position: absolute;
 z-index: 2;
 top: 0;
 left: 0;
 transform: translate(150%,-10%);
-font-size: 12px;
-font-family: "Myriad Pro";
 color: rgb( 255, 255, 255 );
 line-height: 4;
 }
 
 .price{
-position: absolute;
-text-align: center;
 border: 1px solid #d5d6df ;
 background-color: white;
 border-radius: 50%;
 width: 120px;
 height: 120x;
-padding: 30px 25px  ;
+padding: 30px 25px ;
 top:0;
 left: 50%;
 transform: translate(-50%,-50%);
-
 }
 .price-title{
-font-size: 32px;
-font-family: "Source Sans Pro";
 color: rgb( 33, 150, 247 );
 }
 .price-text{
-font-size: 16px;
-font-family: "Source Sans Pro";
 color: rgb( 153, 169, 181 );
 }
 .sub{
 background-color: white;
-text-align: center;
 margin-top: 20px;
 }
 .sub .content{
-font-size: 16px;
 color: rgb( 95, 114, 127 );
-font-family: "Source Sans Pro";
 line-height: 3;
-text-align: center;
 background-color: rgb( 244, 246, 247 );
 }
 .content ul{
-  list-style: none;
+list-style: none;
 }
 .li_2{
-  background-color: white;
+background-color: white;
 }
 
 .sub-title{
-font-size: 24px;
-font-family: "Source Sans Pro";
 color: rgb( 95, 114, 127 );
 line-height: 2;
-
 }
 .sub-content {
 font-size: 14px;
-font-family: "Source Sans Pro";
 color: rgb( 153, 169, 181 );
 line-height: 2;
 margin-bottom: 25px;
 }
-.button {
+.btn {
 margin-top: 50px;
 border-color: rgb(123, 99, 255);
 }
-.button button{
+.btn button{
 border: 1px solid rgb( 108, 19, 111 ) ;
 font-size: 19px;
 font-family: "Montserrat";
-
-
 padding:10px 20px;
-  color: rgb( 108, 19, 111 );
+color: rgb( 108, 19, 111 );
 }
-.button :hover{
+.btn :hover{
 color: white;
 background-color: rgb( 108, 19, 111 );
 }
 .title2_img{
 color: rgb( 255, 255, 255 );
-position: absolute;
-text-align: center;
-font-size: 36px;
-font-family: "Myriad Pro";
 line-height: 1;
 left: 50%;
 top: 50%;
 transform: translate(-50%,-50%);
 }
 .price-title2 {
-font-size: 32px;
-font-family: "Source Sans Pro";
 color: rgb( 215, 68, 152 );
 }
 
 .price2{
-position: absolute;
-text-align: center;
 border: 1px solid #d5d6df ;
 background-color: rgb( 44, 46, 61 );
 border-radius: 50%;
@@ -191,50 +179,3 @@ left: 50%;
 transform: translate(-50%,-50%);
 
 }
-
-/* @media (min-width: 768px) {
-.container {
-max-width: 640px;
-padding-right: 0px;
-padding-left: 0px;
-
-}
-.main{
-grid-template-columns: 1fr 1fr ;
-}
-.button{
-margin: 50px 60px 15px 60px;
-}
-}
-
-@media (min-width: 1024px) {
-.container {
-max-width: 980px;
-
-}
-.main{
-grid-template-columns: 1fr 1fr 1fr;
-}
-}
-
-@media (min-width: 1280px) {
-.container {
-max-width: 1100px;
-
-}
-.main{
-grid-template-columns: 1fr 1fr 1fr;
-}
-}
-
-@media (min-width: 1536px) {
-.container {
-max-width: 1280px;
-
-}
-.main{
-grid-template-columns: 1fr 1fr 1fr;
-
-
-}
-} */
