@@ -71,14 +71,14 @@ margin-bottom: 100px;
   background-color: white;
 }
 
-.content_item p{
+.item_content p{
 color: rgb( 255, 255, 255 );
 }
 .item img{
 width: 100%;
 z-index: -1;
 }
-.title_img{
+.item_title_img{
 color: white;
 font-size: 36px;
 line-height: 1;
@@ -106,7 +106,7 @@ border: 1px solid #d5d6df ;
 background-color: white;
 border-radius: 50%;
 width: 120px;
-height: 120x;
+height: 120px;
 padding: 30px 25px ;
 top:0;
 left: 50%;
@@ -125,7 +125,7 @@ margin-top: 20px;
 .sub .content{
 color: rgb( 95, 114, 127 );
 line-height: 3;
-background-color: rgb( 244, 246, 247 );
+background-color: tn;
 }
 .content ul{
 list-style: none;
@@ -157,14 +157,14 @@ color: rgb( 108, 19, 111 );
 color: white;
 background-color: rgb( 108, 19, 111 );
 }
-.title2_img{
+.item_title2_img{
 color: rgb( 255, 255, 255 );
 line-height: 1;
 left: 50%;
 top: 50%;
 transform: translate(-50%,-50%);
 }
-.price-title2 {
+.price2-title {
 color: rgb( 215, 68, 152 );
 }
 
