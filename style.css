@@ -44,23 +44,23 @@
   padding: 0px 30px;
   margin-bottom: 100px;
 }
-.item_content img {
+.item-content img {
   width: 100%;
   z-index: -1;
 }
-.item_content p {
+.item-content p {
   color: white;
   position: absolute;
   font-family: Montserrat;
   font-size: 32px;
   line-height: 1;
 }
-.item_title_img {
+.item-title-img {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
-.item_title2_img {
+.item-title-2-img {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -125,11 +125,6 @@
 
 .btn {
   margin-top: 50px;
-  border-color: #7b63ff;
-}
-.btn :hover {
-  background-color: #6c136f;
-  color: white;
 }
 .btn button {
   font-size: 19px;
@@ -137,6 +132,10 @@
   border: 1px solid #6c136f;
   padding: 10px 20px;
   color: #6c136f;
+}
+.btn button:hover {
+  background-color: #6c136f;
+  color: white;
 }
 
 .new img {

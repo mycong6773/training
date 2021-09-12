@@ -43,6 +43,17 @@
 @mixin leading($line_height) {
   line-height: $line_height;
 }
+$color: (
+  "white": white,
+  "white-100": #f4f6f7,
+  "gray-300": #d5d6df,
+  "gray-200": #99a9b5,
+  "gray-400": #5f727f,
+  "blue": #2196f7,
+  "purple": #6c136f,
+  "pink": #d74498,
+  "dark-500": #2c2e3d,
+);
 .justify-center {
   justify-content: center;
 }
@@ -72,39 +83,39 @@
 }
 .item {
   width: 100%;
- @include position("relative");
+  @include position("relative");
   max-width: 340px;
   padding: 0px 30px;
   margin-bottom: 100px;
-  &_content {
+  &-content {
     img {
       width: 100%;
       z-index: -1;
     }
     p {
-      color: rgb(255, 255, 255);
+      color: map-get($color, "white");
       position: absolute;
       @include font(Montserrat);
       @include text(32px);
       @include leading(1);
     }
   }
-  &_title_img {
-    @include position("title_img")
+  &-title-img {
+    @include position("title_img");
   }
-  &_title2_img {
+  &-title-2-img {
     @include position("title_img");
     @include text(36px);
     @include font(Montserrat);
-    color: rgb(255, 255, 255);
+    color: map-get($color, "white");
     @include leading(1);
   }
 }
 .price {
-  @include bg(white);
+  @include bg(map-get($color, "white"));
   @include font(Source Sans Pro);
   @include position("price");
-  border: 1px solid #d5d6df;
+  border: 1px solid map-get($color, "gray-300");
   border-radius: 50%;
   width: 120px;
   height: 120px;
@@ -112,89 +123,88 @@
 
   &-title {
     @include text(32px);
-    color: rgb(33, 150, 247);
+    color: map-get($color, "blue");
   }
   &-text {
     @include text(16px);
-    color: rgb(153, 169, 181);
+    color: map-get($color, "gray-200");
   }
 }
 .sub {
-  @include bg(white);
+  @include bg(map-get($color, "white"));
   margin-top: 20px;
   &-title {
     @include font(Source Sans Pro);
     @include text(24px);
-    color: rgb(95, 114, 127);
+    color: map-get($color, "gray-400");
     @include leading(2);
   }
   &-content {
     @include font(Source Sans Pro);
     @include text(14px);
-    color: rgb(153, 169, 181);
+    color: map-get($color, "gray-200");
     @include leading(2);
     margin-bottom: 25px;
   }
 }
 .content {
-  @include bg(rgb(244, 246, 247));
-  color: rgb(95, 114, 127);
+  @include bg(map-get($color, "white-100"));
+  color: map-get($color, "gray-400");
   @include leading(3);
   ul {
     list-style: none;
     @include text(16px);
   }
   .bg-white {
-    @include bg(white);
+    @include bg(map-get($color, "white"));
   }
 }
 .btn {
   margin-top: 50px;
-  border-color: rgb(123, 99, 255);
-  & :hover {
-    @include bg(rgb(108, 19, 111));
-    color: white;
-  }
   button {
     @include text(19px);
     @include font(Montserrat);
-    border: 1px solid rgb(108, 19, 111);
+    border: 1px solid map-get($color, "purple");
     padding: 10px 20px;
-    color: rgb(108, 19, 111);
+    color: map-get($color, "purple");
+    &:hover {
+      @include bg(map-get($color, "purple"));
+      color: map-get($color, "white");
+    }
   }
 }
 .new {
   img {
     z-index: 1;
-   @include position('new_img')
+    @include position("new_img");
   }
   p {
     z-index: 2;
     @include text(12px);
     @include font(Myriad Pro);
-   @include position('new_p');
-    color: rgb(255, 255, 255);
+    @include position("new_p");
+    color: map-get($color, "white");
     @include leading(4);
   }
 }
 .price2 {
-  @include bg(rgb(44, 46, 61));
-  @include position('price');
+  @include bg(map-get($color, "dark-500"));
+  @include position("price");
   text-align: center;
-  border: 1px solid #d5d6df;
+  border: 1px solid map-get($color, gray-300);
   border-radius: 50%;
   width: 120px;
   height: 120x;
   padding: 30px 25px;
-  
+
   &-title {
     @include text(32px);
     @include font(Source Sans Pro);
-    color: rgb(215, 68, 152);
+    color: map-get($color, "pink");
   }
   &-text {
     @include text(16px);
     @include font(Source Sans Pro);
-    color: rgb(153, 169, 181);
+    color: map-get($color, "gray-200");
   }
 }
