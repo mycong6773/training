@@ -6,7 +6,7 @@ function random() {
     index = end - start + 1;
     console.log(start, end);
     let random = parseInt(Math.floor(Math.random() * (end - start + 1)) + start);
-    document.getElementById('answer').innerHTML = ('Số random : ') + random
+    document.getElementById('answer-random').innerHTML = ('Số random : ') + random
     if (index < 10) {
         alert("Số lượng phần tủ nhỏ hơn 10");
         document.getElementById('arrRandom').innerHTML = ('Mảng array 10 số ngẫu nhiên : rỗng ')
