@@ -1,18 +1,15 @@
 
-function random() {
+ random=()=> {
     let start = parseInt(document.getElementById('start').value)
     let end = parseInt(document.getElementById('end').value)
-    array = [start, end]
     index = end - start + 1;
-    console.log(start, end);
     let random = parseInt(Math.floor(Math.random() * (end - start + 1)) + start);
     document.getElementById('answer-random').innerHTML = ('Số random : ') + random
     if (index < 10) {
-        alert("Số lượng phần tủ nhỏ hơn 10");
         document.getElementById('arrRandom').innerHTML = ('Mảng array 10 số ngẫu nhiên : rỗng ')
     } else {
         const arrRandom = Array.apply(null, Array(10))
-            .map(function () { return Math.floor(Math.random() * (end - start + 1)) + start })
+            .map( ()=> { return Math.floor(Math.random() * (end - start + 1)) + start })
         document.getElementById('arrRandom').innerHTML = ('Mảng array 10 số ngẫu nhiên : ') + arrRandom
     }
 
@@ -21,7 +18,7 @@ function random() {
 
 // bài 3
 const arr = [1, 2, 3, 4, 5]
-const getOddNumbers = arr.filter(items => items % 2 != 0)
+const getOddNumbers = arr.filter(items => items % 2 !== 0)
 console.log('bài 3: ' + getOddNumbers);
 // bài 4
 const numberDouble = arr.map(items => items * 2)
