@@ -1,7 +1,7 @@
 
  random=()=> {
-    let start = parseInt(document.getElementById('start').value)
-    let end = parseInt(document.getElementById('end').value)
+    const start = parseInt(document.getElementById('start').value)
+    const end = parseInt(document.getElementById('end').value)
     index = end - start + 1;
     let random = parseInt(Math.floor(Math.random() * (end - start + 1)) + start);
     document.getElementById('answer-random').innerHTML = ('Số random : ') + random
