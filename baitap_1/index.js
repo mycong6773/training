@@ -1,18 +1,4 @@
 
-//   random=()=> {
-//     const start = parseInt(document.getElementById('start').value)
-//     const end = parseInt(document.getElementById('end').value)
-//     const index = end - start + 1;
-//     let random = parseInt(Math.floor(Math.random() * (end - start + 1)) + start);
-//     document.getElementById('answer-random').innerHTML = ('Số random : ') + random
-//     if (index < 10) {
-//         document.getElementById('arrRandom').innerHTML = ('Mảng array 10 số ngẫu nhiên : rỗng ')
-//     } else {
-//         const arrRandom = Array.apply(null, Array(10))
-//             .map( ()=> { return Math.floor(Math.random() * (end - start + 1)) + start })
-//         document.getElementById('arrRandom').innerHTML = ('Mảng array 10 số ngẫu nhiên : ') + arrRandom
-//     }
-// }
 const start = document.getElementById('start')
 const end = document.getElementById('end')
 document.getElementById('form').addEventListener('submit', e => {

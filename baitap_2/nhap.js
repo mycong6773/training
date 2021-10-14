@@ -184,3 +184,25 @@ const getStatusSubjectStudent = () =>{
   return students;
 }
 console.log(getStatusSubjectStudent());
+
+const dtb = markList.map((item) => {
+  let sum = 0;
+  let monHoc = item.marks;
+  for(let diem in monHoc) {
+      if(monHoc.hasOwnProperty(diem)) {
+          sum = (sum + parseFloat(monHoc[diem])/5)
+      }
+  }
+  const studentEl = new Object();
+  studentEl.name = item.name;
+  studentEl.diem = sum
+  return studentEl
+
+})
+console.log(dtb);
+
+const bxh = dtb.filter(item => item.diem >=8).map(item => {
+  return item.name + " "
+})
+
+console.log("Bạn được học sinh giỏi là: " + bxh);

@@ -7,9 +7,7 @@ const getRandomMark = (start, end, step) => {
     );
     do {
         const num = Math.floor(Math.random() * arr.length);
-        if (!newArr.includes(arr[num])) {
-            newArr.push(arr[num]);
-        }
+        newArr.push(arr[num]);
     } while (newArr.length < 5);
     return newArr;
 };
@@ -26,6 +24,7 @@ const generateStudentMark = (name) => {
     markArr.forEach((mark, index) => {
         marks[mark] = Number(marksRdm[index]);
     })
+
 
     studentInfo["name"] = name;
     studentInfo['mark'] = marks;
@@ -82,13 +81,13 @@ const markList = [
 //   List đtb của từng obj
 
 const sizeObject = (object) => {
-    return Object.values(object).length;
+    return Object.keys(object).length;
 };
 
-const mediumScore = (student) => {
+const getAvgScore = (student) => {
     let score = 0;
     if (sizeObject(student) > 5) return;
-    
+
     score =
         ((student.literature + student.maths) * 2 +
             student.biology +
@@ -107,21 +106,22 @@ const studentGenerateMark = () => {
     markList.forEach((student) => {
         const studentInfo = new Object();
         (studentInfo["name"] = student.name),
-            (studentInfo["mediaScore"] = mediumScore(student.marks));
+            (studentInfo["AvgScore"] = getAvgScore(student.marks));
         studentMedia.push(studentInfo);
     });
 
     return studentMedia;
 };
-// số học sinh có điểm trung bình >= 8
+
+
 const getGoodStudent = () => {
     const students = studentGenerateMark().filter(
-      (student) => student.mediaScore >= 8
+        (student) => student.AvgScore >= 8
     );
-  
+
     return students;
-  };
-  console.log(getGoodStudent());
+};
+console.log(getGoodStudent());
 
 
 // get student list has mark = 8,9,10
@@ -131,11 +131,8 @@ const getStudentsMark = () => {
     markList.forEach((student) => {
         const stuObj = new Object();
         const marks = new Object();
-
         stuObj["name"] = student.name;
-
         for (const subject in student.marks) {
-
             if (student.marks[subject] >= 8 && student.marks[subject] <= 10) {
                 marks[subject] = student.marks[subject];
             }
@@ -177,7 +174,7 @@ const totalMoney = () => {
     return students;
 };
 
-console.log( totalMoney());
+console.log(totalMoney());
 
 
 
