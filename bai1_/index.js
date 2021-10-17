@@ -1,7 +1,7 @@
 
 fetchData = () => {
     // var apiUrl = "https://jsonplaceholder.typicode.com/posts";
-    var apiUrl = "https://60f993997ae59c0017165e38.mockapi.io/testApi/Test";
+    const apiUrl = "https://60f993997ae59c0017165e38.mockapi.io/testApi/Test";
     axios.get(apiUrl)
         .then(res => {
             console.log(res);
@@ -17,14 +17,14 @@ fetchData = () => {
                                     <button class="btn btn-danger btn-delete" onclick="removeItem(${items.id})">Xóa</button>
                                     </td>
                                 </tr>`}).join("");
-                document.querySelector('.content-table').insertAdjacentHTML("afterbegin", html)
-            }
+                            document.querySelector('.content-table').insertAdjacentHTML("afterbegin", html)
+                           }
         })
 }
 fetchData();
 
 removeItem = (removeId) => {
-    var apiUrl = "https://60f993997ae59c0017165e38.mockapi.io/testApi/Test";
+    const apiUrl = "https://60f993997ae59c0017165e38.mockapi.io/testApi/Test";
     // var apiUrl = "https://jsonplaceholder.typicode.com/posts";
     console.log(removeId)
     Swal.fire({
@@ -38,7 +38,7 @@ removeItem = (removeId) => {
         cancelButtonText: 'khong dong y'
     }).then((result) => {
         if (result.value) {
-            var deleteUrl = apiUrl + "/" + removeId;
+            const deleteUrl = apiUrl + "/" + removeId;
             axios.delete(deleteUrl)
                 .then(res => {
                     console.log(res);
@@ -69,19 +69,18 @@ getPostInfor = () => {
         })
 }
 addPost=(el)=>{
-    var apiUrl = "https://60f993997ae59c0017165e38.mockapi.io/testApi/Test";
+    const apiUrl = "https://60f993997ae59c0017165e38.mockapi.io/testApi/Test";
     const title = document.querySelector('[name="title"]').value;
     const body = document.querySelector('[name="body"]').value;
     const requestObj = {
         title:title,
         body:body
     }
-    console.log(requestObj);
     axios.post(apiUrl, requestObj)
         .then(data => {
             console.log(data);
             if(data.statusText === "Created"){
-window.location.href='index.html'
+              window.location.href='index.html'
             }
         })
     return false;
