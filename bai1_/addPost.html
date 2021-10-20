@@ -13,16 +13,16 @@
 <body>
     <div class="container">
         <h4>Form thêm sản phẩm</h4>
-        <form onsubmit="return addPost(this)">
+        <form >
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Title</label>
+                <label for="title" class="form-label">Title</label>
                 <input type="text" name="title" class="title" id="title" placeholder="title" />
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Body</label>
+                <label for="body" class="form-label">Body</label>
                 <input type="text" name="body" class="body" id="body" placeholder="body" />
             </div>
-            <button type="submit">Submit</button>
+            <button type="submit" id="form-add">Submit</button>
             <a href="index.html">Hủy</a>
         </form>
     </div>

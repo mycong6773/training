@@ -1,14 +1,10 @@
-
-fetchData = () => {
-    // var apiUrl = "https://jsonplaceholder.typicode.com/posts";
-    const apiUrl = "https://60f993997ae59c0017165e38.mockapi.io/testApi/Test";
+const apiUrl = "https://60f993997ae59c0017165e38.mockapi.io/testApi/Test";
+const fetchData = () => {
     axios.get(apiUrl)
         .then(res => {
-            console.log(res);
-            if (res.statusText === "OK") {
-                const html = res.data
-                    .map(items => {
-                        return `<tr class="row-${items.id}">
+            const html = res.data
+                .map(items => {
+                    return `<tr class="row-${items.id}">
                                     <td class="text-center">${items.id}</td>
                                     <td>${items.title}</td>
                                     <td>${items.body}</td>
@@ -17,15 +13,17 @@ fetchData = () => {
                                     <button class="btn btn-danger btn-delete" onclick="removeItem(${items.id})">Xóa</button>
                                     </td>
                                 </tr>`}).join("");
-                            document.querySelector('.content-table').insertAdjacentHTML("afterbegin", html)
-                           }
+            document.querySelector('.content-table').insertAdjacentHTML("afterbegin", html)
+
         })
+        .catch(err => {
+            console.log(err);
+        })
+
 }
 fetchData();
 
-removeItem = (removeId) => {
-    const apiUrl = "https://60f993997ae59c0017165e38.mockapi.io/testApi/Test";
-    // var apiUrl = "https://jsonplaceholder.typicode.com/posts";
+const removeItem = (removeId) => {
     console.log(removeId)
     Swal.fire({
         title: 'Chac chan xoa?',
@@ -41,63 +39,72 @@ removeItem = (removeId) => {
             const deleteUrl = apiUrl + "/" + removeId;
             axios.delete(deleteUrl)
                 .then(res => {
-                    console.log(res);
                 })
                 .then(() => {
                     const removeItem = document.querySelector('.row-' + removeId);
                     removeItem.remove()
                 })
+                .catch(err => {
+                    console.log(err);
+                })
 
         }
     })
 }
-var postInfor = {};
-var id = null;
-getPostInfor = () => {
+let postInfor = {};
+let id = null;
+const getInfor = document.querySelector('#getPostInfor')
+getInfor.onload = getPostInfor = (e) => {
+    e.preventDefaut;
     const urlParams = new URLSearchParams(window.location.search);
     id = urlParams.get('id');
     const getPostInforUrl = apiUrl + "/" + id;
     axios.get(getPostInforUrl)
         .then(res => {
-            console.log(res)
-            if (res.statusText === "OK") {
-                postInfor = res.data;
-                document.querySelector('[name="title"]').value = postInfor.title
-                document.querySelector('[name="body"]').value = postInfor.body
-            }
-
+            console.log(res);
+            postInfor = res.data;
+            document.querySelector('[name="title"]').value = postInfor.title
+            document.querySelector('[name="body"]').value = postInfor.body
+        })
+        .catch(err => {
+            console.log(err);
         })
 }
-addPost=(el)=>{
-    const apiUrl = "https://60f993997ae59c0017165e38.mockapi.io/testApi/Test";
-    const title = document.querySelector('[name="title"]').value;
-    const body = document.querySelector('[name="body"]').value;
-    const requestObj = {
-        title:title,
-        body:body
-    }
-    axios.post(apiUrl, requestObj)
-        .then(data => {
-            console.log(data);
-            if(data.statusText === "Created"){
-              window.location.href='index.html'
-            }
-        })
-    return false;
-}
-
-editPost = () => {
+const formEdit = document.querySelector('#form-edit')
+formEdit.onclick = editPost = (e) => {
+    e.preventDefaut;
     const title = document.querySelector('[name="title"]').value;
     const body = document.querySelector('[name="body"]').value;
     postInfor.title = title;
     postInfor.body = body;
-    const UpdateUrlPost = apiUrl + '/' + id;
-    axios.put(UpdateUrlPost, postInfor)
+    const updateUrl = apiUrl + '/' + id;
+    console.log(updateUrl);
+    axios.put(updateUrl, postInfor)
         .then(data => {
-            console.log(data);
-            if (data.statusText === "OK") {
-                window.location.href = 'index.html'
-            }
+            window.location.href = 'index.html'
+        })
+        .catch(err => {
+            console.log(err);
         })
     return false;
+}
+
+
+const formAdd = document.querySelector('#form-add')
+formAdd.onclick = addPost = (e, el) => {
+    e.preventDefaut;
+    const title = document.querySelector('[name="title"]').value;
+    const body = document.querySelector('[name="body"]').value;
+    const requestObj = {
+        title: title,
+        body: body
+    }
+    axios.post(apiUrl, requestObj)
+        .then(data => {
+            window.location.href = 'index.html'
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    return true;
 }
